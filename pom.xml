@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 注意版本号 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.9.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <!-- 依赖管理，自动配置 -->
+    <groupId>com.example</groupId>
+    <artifactId>mySpring</artifactId>
+    <version>1.0</version>
+
+    <!-- 子module 列表-->
+    <modules>
+        <module>micro-user-service</module>
+        <module>micro-order-service</module>
+        <module>micro-eureka-server</module>
+        <module>micro-feign-api</module>
+        <module>micro-gateway</module>
+        <module>java-core</module>
+        <module>micro-rabbitmq-publisher</module>
+        <module>micro-rabbitmq-consumer</module>
+        <module>springboot-jpa-hibernate</module>
+        <module>aws-lambda</module>
+        <module>MyAngular</module>
+        <module>springboot-mvc-mybatis</module>
+        <module>design-patterns</module>
+        <module>my-product-service-mongodb</module>
+        <module>my-order-service</module>
+        <module>my-inventory-service</module>
+        <module>my-discovery-server</module>
+        <module>my-api-gateway</module>
+        <module>my-notification-service</module>
+        <module>active-mq</module>
+        <module>jsp-servlet-jdbc</module>
+        <module>my-identity-service</module>
+
+
+
+    </modules>
+    <!-- pom类型为父工程-->
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+       <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+        <mysql.version>5.1.47</mysql.version>
+        <mybatis.version>2.1.1</mybatis.version>
+    </properties>
+<!-- 管理版本号，不管理依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- springCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <!-- 实际 管理依赖的地方 -->
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.mybatis.spring.boot</groupId>-->
+<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Alibaba Nacos依赖-->
+        <!--            <dependency>-->
+        <!--                <groupId>com.alibaba.cloud</groupId>-->
+        <!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+        <!--                <version>2.2.5.RELEASE</version>-->
+        <!--                <type>pom</type>-->
+        <!--                <scope>import</scope>-->
+        <!--            </dependency>-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.2</version>
+        </dependency>
+
+
+
+    </dependencies>
+</project>

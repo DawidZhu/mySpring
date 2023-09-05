@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+    <!-- dataSource -->
+    <property name="connection.username">root</property>
+    <property name="connection.password">Davy2018</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/db_test</property>
+
+    <!-- C3P0 -->
+    <property name="hibernate.c3p0.acquire_increment">10</property>
+    <property name="hibernate.c3p0.idle_test_period">10000</property>
+    <property name="hibernate.c3p0.timeout">5000</property>
+    <property name="hibernate.c3p0.max_size">30</property>
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_statements">10</property>
+
+
+    <!-- 打印SQL -->
+    <property name="show_sql">true</property>
+    <!-- 格式化SQL -->
+    <property name="format_sql">true</property>
+    <!-- 是否自动生成数据库
+    <property name="hibernate.hbm2ddl.auto"></property>
+    -->
+    <!--注册 ORMaping 文件 -->
+    <mapping resource="com/example/entity/City.hbm.xml.bak"></mapping>
+
+</session-factory>
+
+
+</hibernate-configuration>

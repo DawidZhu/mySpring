@@ -1,0 +1,3 @@
+com/example/feign/clients/UserClient.class
+com/example/feign/pojo/User.class
+com/example/feign/config/DefaultFeignConfiguration.class

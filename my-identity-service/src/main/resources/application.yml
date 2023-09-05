@@ -1,0 +1,27 @@
+spring:
+
+  #  datasource
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_test
+    username: root
+    password: Davy2018
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: identity-service #
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+server:
+  port: 9898
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type"  content="application/json" charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+Welcome david
+
+测试rest 风格
+<!-- 测试表单提交 get, post, put, delete-->
+<form action="/rest/user" method="get">
+    <input value=" rest-get Submit" type="submit">
+</form>
+
+<form action="/rest/user" method="post">
+    <input value=" rest-post Submit" type="submit">
+</form>
+
+<form action="/rest/user" method="post">
+    <input name="_method" type="hidden" value="put">
+    <input value=" rest-put Submit" type="submit">
+</form>
+
+<form action="/rest/user" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input value=" rest-delete Submit" type="submit">
+</form>
+<br>
+<!-- 测试 RequestBody  -->
+<form action="/restParamater/save" method="post">
+   UserName: <input name="username" >
+    Email: <input name="email">
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>

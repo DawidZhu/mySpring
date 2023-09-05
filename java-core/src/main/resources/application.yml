@@ -1,0 +1,38 @@
+
+Person:
+  userName: David
+  boss: true
+  age: 18
+  interests:
+    -footable
+    -basstable
+  car:
+    brand: BMW
+    price: 9999999
+# convention over configuration
+spring:
+  mvc:
+    static-path-pattern: /res/**
+    hiddenmethod:
+      filter:
+        enabled: true  # 页面使用rest风格
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_test
+    username: root
+    password: Davy2018
+   # type: com.zaxxer.hikari.util.DriverDataSource
+    # Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    #  redis 启动命令 ： redis-server
+  redis:
+    host: localhost
+    port: 6379
+    client-type: lettuce  # 客户端默认是lettuce，可选jedis
+
+
+
+
+
+
+

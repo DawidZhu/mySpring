@@ -1,0 +1,19 @@
+# Step 2: create K8s Service Object
+# 现在我们已经部署了一个 Deployment，其中有三个 Pod，就有三个 IP，那我们如何向这三个 Pod 请求服务呢，
+  # 何况每当上线部署后，就会产生新的 Pod IP。即我们如何做服务发现
+#我们可以通过 Service 解决这个问题，做指定 Deployment 或者特定集合 Pod 的网络层抽象
+# 执行文件命令：kubectl apply -f k8s-service.yml
+# 参看service : kubectl get svc
+
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: springboot-k8s-svc
+spec:
+  selector:  #spec.selector: 指定如何选择 Pod
+    app: spring-boot-k8s
+  ports:
+    - protocol: "TCP"
+      port: 9090 # The port that the service is running on in the cluster
+      targetPort: 9090 # The port exposed by the service
+  type: NodePort # type of the service.

@@ -1,0 +1,23 @@
+# Step 1: Create K8s Deployment Object，a template for creating pods
+# 使用命令执行该文件：kubectl apply -f k8s-deployment.yml
+# 查看部署信息：kubectl get deployments
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
+metadata:
+  name: spring-boot-k8s
+spec:
+  selector: #spec.selector: 定位需要管理的 Pod
+    matchLabels:
+      app: spring-boot-k8s
+  replicas: 3 # Number of replicas that will be created for this deployment，spec.replicas: 指定要部署的个数
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s
+    spec:
+      containers:
+        - name: spring-boot-k8s
+          image: springboot-k8s-example:1.0 # Image that will be used to containers in the cluster
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9090 # The port that the container is running on in the cluster
